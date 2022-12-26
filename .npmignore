@@ -1,0 +1,15 @@
+.circleci
+.DS_Store
+node_modules
+docs
+src
+test
+.eslintrc.js
+.gitignore
+.size-limit.json
+jest.config.js
+readme.md
+tsconfig.json
+tsup.config.ts
+yarn.lock
+yarn-error.log

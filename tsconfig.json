@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "rootDir": ".",
+    "types": [
+      "@types/node",
+      "@types/jest"
+    ],
+  },
+  "resolve": {
+    "extensions": [".ts"]
+  },
+  "exclude": [
+    "node_modules",
+  ],
+}

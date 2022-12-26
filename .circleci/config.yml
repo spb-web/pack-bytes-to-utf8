@@ -1,0 +1,70 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/mern-starter
+    docker:
+      - image: circleci/node:16.13.1-bullseye-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: install-npm-wee
+          command: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: build
+          command: yarn build
+  eslint:
+    working_directory: ~/mern-starter
+    docker:
+      - image: circleci/node:16.13.1-bullseye-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: install-npm-wee
+          command: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: eslint
+          command: yarn eslint
+
+  test:
+    working_directory: ~/mern-starter
+    docker:
+      - image: circleci/node:16.13.1-bullseye-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: install-npm-wee
+          command: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: test
+          command: yarn test
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: ./reports/
+      - store_test_results:
+          path: ./reports/
+
+workflows:
+  tests:
+    jobs:
+      - eslint
+      - build
+      - test
+
+# VS Code Extension Version: 1.5.0
