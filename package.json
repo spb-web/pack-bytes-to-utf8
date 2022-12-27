@@ -1,6 +1,6 @@
 {
   "name": "pack-bytes-to-utf8",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.mjs",
   "repository": "https://github.com/spb-web/pack-bytes-to-utf8",
   "author": "Vyacheslav Ruzanov <spb.web@bk.ru>",
