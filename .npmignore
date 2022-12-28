@@ -4,7 +4,7 @@ node_modules
 docs
 src
 test
-.eslintrc.js
+.eslintrc.json
 .gitignore
 .size-limit.json
 jest.config.js
