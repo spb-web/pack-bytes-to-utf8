@@ -4,7 +4,7 @@
     "target": "ES2022",
     "module": "CommonJS",
     "moduleResolution": "node",
-    "allowJs": true,
+    "allowJs": false,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "rootDir": ".",
@@ -17,6 +17,7 @@
     "extensions": [".ts"]
   },
   "exclude": [
+    "dist",
     "node_modules",
   ],
 }
